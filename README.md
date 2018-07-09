@@ -2,6 +2,8 @@
 The main goal of this project is to give simple examples of how to verify 
 methods invocations and their arguments.
 
+_Reference_: [Integration based testing](http://spockframework.org/spock/docs/1.0/interaction_based_testing.html)
+
 # manual
 * verifying invocations
 
