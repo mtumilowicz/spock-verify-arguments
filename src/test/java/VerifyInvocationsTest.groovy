@@ -16,6 +16,12 @@ class VerifyInvocationsTest extends Specification {
         1 * verify.exact("exact")
         
         then:
-        1 * verify.length({ String str -> str.length() > 10} as String)
+        1 * verify.length({str -> str.length() > 10})
+        
+        then:
+        1 * verify.pair(_, _) >> {str1, str2 -> str1.length() ==  str2.length()} 
+        
+        then:
+        1 * verify.arguments(*_)
     }
 }
