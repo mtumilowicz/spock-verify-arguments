@@ -32,11 +32,12 @@ methods invocations and their arguments.
     1 * verify.method2(*_)  
     ```
     
-    _Remark_: `*_` any number of any arguments  .
-    _Remark_: Invocations will be checked in order the same order as `then:`
+    _Remark_: `*_` any number of any arguments.  
+    _Remark_: Invocations will be checked in the same order as `then:`
     parts. If we have only one `then:` section the order does not matter.
     
 * verifying arguments
+
     if you have a method `all()` in class `XXX`:
     ```
     all() {
@@ -58,6 +59,6 @@ methods invocations and their arguments.
     then:
     1 * verify.method1({str -> str.length() > 10})
     1 * verify.pair(_,_) >> {str1, str2 -> str1.length() ==  str2.length()} // correlated states of arguments
-    1 * verify.method3("exact")    
+    1 * verify.method3("exact") // exact matching
     ```    
-    _Remark_: order in `then:` part is insignificant.
+    _Remark_: Order in `then:` part is insignificant.
