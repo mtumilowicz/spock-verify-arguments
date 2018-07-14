@@ -85,13 +85,13 @@ relevant about an interaction, avoiding the over-specification trap.
         rule: **Interactions declared in a `then:` block are matched against before 
         any other interactions.**
     
-    * how are interactions recognized?
+    * how are interactions recognized?  
         If an expression is in statement position and is either a 
         multiplication `(*)` or a right-shift `(>>, >>>)` operation, 
         then it is considered an interaction and will be parsed 
         accordingly.
         
-    * combining mocking and stubbing
+    * combining mocking and stubbing  
         When mocking and stubbing the same method call, they have to 
         happen in the same interaction. In particular, the following 
         Mockito-style splitting of stubbing and mocking into two separate 
@@ -109,13 +109,13 @@ relevant about an interaction, avoiding the over-specification trap.
         because the receive call will first get matched against the 
         interaction in the `then:` block. Since that interaction doesn’t 
         specify a response, the default value for the method’s return 
-        type (null in this case) will be returned - this is just another 
+        type (`null` in this case) will be returned - this is just another 
         facet of Spock’s lenient approach to mocking. 
         Hence, the interaction in the `setup:` block will never get a 
         chance to match.
         
         **Mocking and stubbing of the same method call has to happen in the 
-        same interaction.**
+        same interaction:**
         ```
         when:
         publisher.send("message1")
